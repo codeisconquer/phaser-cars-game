@@ -4,7 +4,8 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const package = require("./package.json");
 
 module.exports = {
-  entry: path.resolve(__dirname, "./src/js/index.ts"),
+  mode: "development",
+  entry: path.resolve(__dirname, "./src/js/index.js"),
   module: {
     rules: [
       {
@@ -59,8 +60,12 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: "src/assets/",
-          to: "assets/",
+          from: "src/images/",
+          to: "images/",
+        },
+        {
+          from: "src/audio/",
+          to: "audio/",
         },
       ],
     }),
