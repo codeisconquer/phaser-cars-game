@@ -7,7 +7,6 @@ export default class Controller {
 
         this.emitter = config.emitter;
         this.model = config.model;
-        console.log('controller config', config)
         this.emitter.on(G.SET_SCORE, this.setScore);
         this.emitter.on(G.UP_POINTS, this.upPoints);
         this.emitter.on(G.TOGGLE_SOUND, this.toggleSound);
